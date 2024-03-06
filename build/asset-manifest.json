@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-bird-app/static/css/main.e239ae9a.css",
+    "main.js": "/react-bird-app/static/js/main.6f404894.js",
+    "static/media/section-one.png": "/react-bird-app/static/media/section-one.43970281ac5891c19461.png",
+    "static/media/hero-image.png": "/react-bird-app/static/media/hero-image.c275515e358127f06f57.png",
+    "static/media/default_icon.png": "/react-bird-app/static/media/default_icon.7a6a6c54279a54d1977c.png",
+    "index.html": "/react-bird-app/index.html",
+    "main.e239ae9a.css.map": "/react-bird-app/static/css/main.e239ae9a.css.map",
+    "main.6f404894.js.map": "/react-bird-app/static/js/main.6f404894.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e239ae9a.css",
+    "static/js/main.6f404894.js"
+  ]
+}

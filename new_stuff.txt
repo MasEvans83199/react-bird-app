@@ -1,0 +1,91 @@
+{posts.map((post) => (
+  <TimelineItem key={post.id} className="relative rounded-xl ...">
+    {/* ... Existing code ... */}
+    <TimelineBody>
+      {/* ... Existing code ... */}
+      {post.replies && (
+        <div>
+          <Typography variant="subheading">Replies:</Typography>
+          {post.replies.map((reply) => (
+            <div key={reply.id} className="ml-4 mt-2">
+              <Typography variant="paragraph">{reply.reply}</Typography>
+              <Typography variant="small" color="black">
+                Reply by: {reply.user_id.username}
+              </Typography>
+            </div>
+          ))}
+        </div>
+      )}
+    </TimelineBody>
+  </TimelineItem>
+))}
+
+
+const handleTextChange = (event, postId) => {
+  const newReplies = [...replies];
+  const index = newReplies.findIndex((reply) => reply.post_id === postId);
+
+  if (index !== -1) {
+    newReplies[index].reply = event.target.value;
+  } else {
+    newReplies.push({ post_id: postId, reply: event.target.value });
+  }
+
+  setReplies(newReplies);
+};
+
+const handleSubmit = async (event, postId) => {
+  event.preventDefault();
+
+  try {
+    const reply = replies.find((reply) => reply.post_id === postId);
+
+    if (reply) {
+      // Create a new reply with the text, post ID, and user ID
+      const { data: replyData, error: replyError } = await supabase
+        .from("replies")
+        .upsert([
+          {
+            reply: reply.reply,
+            post_id: postId,
+            profile_id: session.user.id,
+          },
+        ]);
+
+      if (replyError) {
+        console.error("Error creating reply:", replyError);
+      }
+
+      // Update the post with the newly created reply ID
+      const { error: postError } = await supabase
+        .from("forum_posts")
+        .update({ reply_id: replyData[0].id })
+        .eq("id", postId);
+
+      if (postError) {
+        console.error("Error updating post with reply ID:", postError);
+      }
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+
+<Textarea
+  size="lg"
+  className="bg-slate-300"
+  color="light-blue"
+  value={reply.reply}
+  onChange={(e) => handleTextChange(e, post.id)}
+  label="Reply to this post...(optional)"
+/>
+<div className="grid place-items-center">
+  <Button
+    color="light-blue"
+    type="submit"
+    onClick={(e) => handleSubmit(e, post.id)}
+  >
+    Reply
+  </Button>
+</div>

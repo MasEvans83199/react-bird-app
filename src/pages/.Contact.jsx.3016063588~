@@ -1,0 +1,88 @@
+import React from 'react';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+  Typography,
+  Button,
+  IconButton,
+  Input,
+  Textarea,
+} from '@material-tailwind/react';
+
+function Contact() {
+  const [formStatus, setFormStatus] = React.useState('Send');
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus('Sending...');
+    const { name, email, message } = e.target.elements;
+    let contactForm = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    };
+    console.log(contactForm);
+  };
+  
+  return (
+    <Card className="">
+      <CardHeader
+        variant="gradient"
+        color="gray"
+        className="mb-4 grid h-28 place-items-center"
+      >
+        <Typography 
+          variant="h2" 
+          color="white"
+        >
+          Contact Us
+        </Typography>
+      </CardHeader>
+      <CardBody className="flex flex-col gap-4">
+        <form 
+          onSubmit={onSubmit}
+          className="w-3/5 mx-auto"
+        >
+          <div className="mb-4">
+            <Input
+              className="border-2 border-gray-300 px-3 py-2 w-full rounded-md focus:outline-none focus:border-blue-500"
+              type="text"
+              label="Your name"
+              required
+            />
+          </div>
+  
+          <div className="mb-4">
+            <Input
+              className="border-2 border-gray-300 px-3 py-2 w-full rounded-md focus:outline-none focus:border-blue-500"
+              type="email"
+              label="Email"
+              required
+            />
+          </div>
+  
+          <div className="mb-4">
+            <Textarea
+              className="border-2 border-gray-300 px-3 py-2 w-full rounded-md focus:outline-none focus:border-orange-500"
+              variant="static"
+              placeholder="Enter your message here..."
+              rows={8}
+              required
+            ></Textarea>
+          </div>
+  
+          <Button
+            color="orange"
+            className="text-white px-4 py-2 rounded-md shadow-lg"
+            type="submit"
+          >
+            {formStatus}
+          </Button>
+        </form>
+      </CardBody>
+    </Card>
+  );
+}
+
+export default Contact;

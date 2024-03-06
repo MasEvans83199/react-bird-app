@@ -1,0 +1,51 @@
+/* Set the gallery container's max width and margin */
+.gallery {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Position the featured photo and add a description */
+.featured-photo {
+  text-align: center;
+}
+.featured-photo img {
+  max-width: 100%;
+}
+.featured-photo p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Create the grid and style the images */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3px;
+}
+.photo-item img {
+  max-width: 100%;
+  height: auto;
+}
+.photo-item .photo-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}
+.photo-item .photo-overlay p {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
