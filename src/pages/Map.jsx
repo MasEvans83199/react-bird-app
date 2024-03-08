@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import createGlobe from "cobe";
-import { supabase } from "../services/supabase";
+import { supabase } from "../services/supabase.js";
 import {
   Typography,
   Card,

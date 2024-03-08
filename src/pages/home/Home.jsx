@@ -1,7 +1,7 @@
 import React from "react";
-import Hero from "./Hero";
-import SectionOne from "./SectionOne";
-import SectionTwo from "./SectionTwo";
+import Hero from "./Hero.jsx";
+import SectionOne from "./SectionOne.jsx";
+import SectionTwo from "./SectionTwo.jsx";
 import {
   Card,
   CardBody,

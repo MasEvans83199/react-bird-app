@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../../services/supabase";
+import { supabase } from "../../services/supabase.js";
 import { Button, Input } from "@material-tailwind/react";
 
 function BirdImage({ size, url, onUpload, uploading }) {

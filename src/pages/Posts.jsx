@@ -16,7 +16,7 @@ import {
 import {
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
-import { supabase } from "../services/supabase"; // Import your supabase service
+import { supabase } from "../services/supabase.js";
 
 function Posts({ session }) {
   const { postId } = useParams();

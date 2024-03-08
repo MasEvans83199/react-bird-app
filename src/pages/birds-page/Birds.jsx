@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import { supabase } from "../../services/supabase";
-import BirdInformation from "./BirdInformation";
-import BirdImage from "./BirdImage";
+import { supabase } from "../../services/supabase.js";
+import BirdInformation from "./BirdInformation.jsx";
+import BirdImage from "./BirdImage.jsx";
 import { DarkThemeToggle, Flowbite } from "flowbite-react";
 import {
   Collapse,

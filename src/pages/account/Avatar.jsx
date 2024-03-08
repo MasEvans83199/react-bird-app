@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../../services/supabase";
+import { supabase } from "../../services/supabase.js";
 import defaultAvatar from "../../assets/default_icon.png";
 import { Input, Avatar, Button } from "@material-tailwind/react";
 

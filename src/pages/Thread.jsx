@@ -27,7 +27,7 @@ import {
   ArrowRightIcon,
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
-import { supabase } from "../services/supabase";
+import { supabase } from "../services/supabase.js";
 import defaultAvatar from "../assets/default_icon.png";
 
 function Thread({ session }) {

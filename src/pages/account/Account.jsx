@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { supabase } from "../../services/supabase";
+import { supabase } from "../../services/supabase.js";
 import { Link, useNavigate } from "react-router-dom";
-import Avatar from "./Avatar";
+import Avatar from "./Avatar.jsx";
 import {
   Card,
   CardBody,

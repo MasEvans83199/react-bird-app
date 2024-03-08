@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { supabase } from "../../services/supabase";
+import { supabase } from "../../services/supabase.js";
 import { useNavigate } from "react-router-dom";
 import { Howl } from "howler";
 import { DarkThemeToggle, Flowbite } from "flowbite-react";

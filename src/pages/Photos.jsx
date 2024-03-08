@@ -12,7 +12,7 @@ import {
   CardFooter,
 } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { supabase } from "../services/supabase";
+import { supabase } from "../services/supabase.js";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
